@@ -89,6 +89,35 @@ function showPersonNr(){
     document.querySelector('#cardpay').style.display = 'none';
 }
 
+/*
+* Requrements when filling in the form
+*/
+
+// Returns true if creditcard or invoice are checked
+const creditCard = document.querySelector('#creditcard') 
+const invoice = document.querySelector('#invoice')
+
+let criditCardIsOk = false;
+
+creditCard.addEventListener('change', checkCreditcard);
+
+function checkCreditcard (e){
+    if(invoice.checked || creditCard.checked){ // Den vill inte godta eller utan de försvinner bara vid card
+        criditCardIsOk = true
+    } else {
+        criditCardIsOk = false
+    }
+    activateSubmitBtn();
+}
+
+// Make disabled from send button disapear if the form is field correctly
+const submitBtn = document.querySelector('#submitBtn');
+
+function activateSubmitBtn(){
+    if (criditCardIsOk){
+        submitBtn.removeAttribute('disabled')
+    }
+}
 
 /*
 Att lägga till i js designmässigt/användarvänligt. 

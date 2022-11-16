@@ -365,7 +365,7 @@
                         <form action="">
                             <label for="">
                                 <span>Förnamn</span>  
-                                <input pattern="[A-Za-zÅÄÖåäö\-]{1,}" required class="input_group" type="text" id="name"> 
+                                <input pattern="[A-Za-zÅÄÖåäö\-]{1,}" required class="input_group" type="text" id="firstname"> 
                             </label>
                             <br>
                             <label for="">
@@ -375,7 +375,7 @@
                             <br>
                             <label for=""> 
                                 <span>Gatuadress</span> 
-                                <input pattern="[A-Za-zÅÄÖåäö0-9 ]{1,}" required class="input_group" type="text" id="adress">
+                                <input pattern="[A-Za-zÅÄÖåäö0-9 ]{1,}" required class="input_group" type="text" id="address">
                             </label>
                             <br>
                             <label for="">
@@ -395,7 +395,7 @@
                             <br>
                             <label for="">
                                 <span>Telefonnummer</span> 
-                                <input required class="input_group" type="number" id="phonenumber">
+                                <input required pattern="[0-9]{10}" class="input_group" type="number" id="phonenumber">
                             </label>
                             <br>
                             <label for="">
@@ -405,7 +405,7 @@
                             <br>
                             <label for="">
                                 Godkännande av behandling av personuppgifter
-                                <input required class="input_group" type="checkbox" name="gdpr" id="gdpr">
+                                <input required class="input_group" type="checkbox" name="gdpr" id="personalData">
                             </label>
                             <br>
                             <label for="">
@@ -441,8 +441,8 @@
                                     <input required class="input_group" type="number" id="CVC">
                                 </label>
                             </div>
-                            <input class="reset_form_button" type="reset" value="Rensa formulär">
-                            <input class="submit_form_button" type="submit" value="Skicka">
+                            <input  class="reset_form_button" type="reset" value="Rensa formulär">
+                            <input disabled id="submitBtn" class="submit_form_button" type="submit" value="Skicka">
                         </form>
                     </div>
                 </section>
