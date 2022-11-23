@@ -70,7 +70,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutPrice: '15',
     amount: 0
 },{
-    donutTitle: 'Laktris',
+    donutTitle: 'Lakrits',
     donutImg1: './images/lakrits.jpg',
     donutImg2: './images/lakrits2.jpg',
     donutAlt: 'munk med laktris smak',
@@ -90,7 +90,14 @@ donutCardsContainer.innerHTML +=
 `<article class="donutCard">
     <div class="donutCardHeaderContainer">
         <h3>${donutCards[i].donutTitle}</h3 id="donutCardHeader">
-    </div>
+        </div>
+        <div class="rating">
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+        </div>
     <section class="donutCardContainer">
         <div class="donutCardImgContainer">
             <div class="controlsImgSlideshow" id="controlsImgSlideshow">
@@ -586,3 +593,26 @@ om det finns några fel
 * Det ska finnas en "Rensa beställning"-knapp som återställer samtliga formulärfält liksom 
   eventuella beställda munkar/produkter (alltså antalet återställs till 0) 
   (Det ska finnas ett fält för att mata in en rabattkod.)*/
+
+  const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+  function executeRating(stars) {
+    const starClassActive = "rating__star fas fa-star";
+    const starClassInactive = "rating__star far fa-star";
+    const starsLength = stars.length;
+    let i;
+    }
+
+    stars.map((star) => {
+        star.onclick = () => {
+           i = stars.indexOf(star);
+  
+           if (star.className===starClassInactive) {        
+              for (i; i >= 0; --i) stars[i].className = starClassActive;
+           } else {
+              for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+           }
+        };
+     });   
+
+    executeRating(ratingStars);

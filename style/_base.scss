@@ -597,4 +597,17 @@ footer {
     display: flex;    
 }
 
+.rating {
+   width: 180px;
+   font-size: 1.5rem;
+   margin-left: 120px;
+   margin-bottom: 10px;
+   display: block;
+ 
 
+}
+
+.rating__star {
+   cursor: pointer;
+   color: #dabd18b2;
+}
