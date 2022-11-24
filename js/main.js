@@ -20,7 +20,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'Apelsinmunk',
     donutPrice: '15',
     amount: 0,
-    category: 'Söt',
+    category: 'frukt',
 }, {
     donutTitle: 'Banana suprice',
     donutImg1: './images/banansuprice.jpg',
@@ -28,7 +28,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med banansmak',
     donutPrice: '20',
     amount: 0,
-    category: 'Söt',
+    category: 'frukt',
 },{
     donutTitle: 'Blåbär',
     donutImg1: './images/blueberry.jpg',
@@ -36,7 +36,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med blåbärssmak',
     donutPrice: '15',
     amount: 0,
-    category: 'Sur',
+    category: 'bär',
 },{
     donutTitle: 'Karamellchoklad',
     donutImg1: './images/caramellchoklad.jpg',
@@ -44,7 +44,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med karamellchoklad smak',
     donutPrice: '18',
     amount: 0,
-    category: 'Söt',
+    category: 'godis',
 },{
     donutTitle: 'Chunky monkey',
     donutImg1: './images/chunkymonkey.jpg',
@@ -52,7 +52,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med Chunky munky smak',
     donutPrice: '25',
     amount: 0,
-    category: 'Söt',
+    category: 'godis',
 },{
     donutTitle: 'Citronfromage',
     donutImg1: './images/citronfromage.jpg',
@@ -60,7 +60,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med citron smak',
     donutPrice: '18',
     amount: 0,
-    category: 'Sur',
+    category: 'frukt',
 },{
     donutTitle: 'Hallon-choklad',
     donutImg1: './images/hallonchoklad.jpg',
@@ -68,15 +68,15 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med citron hallon och choklad smak',
     donutPrice: '20',
     amount: 0,
-    category: 'Söt',
+    category: 'bär',
 },{
-    donutTitle: 'Jordgrubbsdröm',
+    donutTitle: 'Jordgubbsdröm',
     donutImg1: './images/strawberrydream.jpg',
     donutImg2: './images/strawberrydream2.jpg',
     donutAlt: 'munk med jordgubbs smak',
     donutPrice: '15',
     amount: 0,
-    category: 'Söt',
+    category: 'bär',
 },{
     donutTitle: 'Lakrits',
     donutImg1: './images/lakrits.jpg',
@@ -84,7 +84,7 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med laktris smak',
     donutPrice: '15',
     amount: 0, 
-    category: 'Salt',
+    category: 'godis',
 },{
     donutTitle: 'Mandelknäck',
     donutImg1: './images/caramell.jpg',
@@ -92,13 +92,27 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'munk med mandel och knäck smak',
     donutPrice: '15',
     amount: 0,
-    category: 'Söt',
+    category: 'godis',
 }];
 
-donutCards.sort((donutCard1, donutCard2) => donutCard1.donutPrice - donutCard2.donutPrice);
-
+/*donutCards.sort((donutCard1, donutCard2) => donutCard1.donutPrice < donutCard2.donutPrice);
 
 console.table(donutCards);
+
+const startingSum = 0;
+const sum = donutCards.reduce((sumOfdonutCards, currentdonutCard) => sumOfdonutCards + currentdonutCard.category, startingSum);
+
+console.log(sum);*/
+
+const frukt = donutCards.filter(donutCard => donutCard.category === 'frukt');
+console.table(frukt);
+
+const bär = donutCards.filter(donutCard => donutCard.category === 'bär');
+console.table(bär);
+
+const godis = donutCards.filter(donutCard => donutCard.category === 'godis');
+console.table(godis);
+
 
 for(let i = 0; i < donutCards.length; i++){ // Varje gång loopen körs kommer vår artikel läggas in i vår html struktur i vår section och alla 10 korten kommer upp i webben
 donutCardsContainer.innerHTML += 
