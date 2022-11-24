@@ -20,70 +20,85 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutAlt: 'Apelsinmunk',
     donutPrice: '15',
     amount: 0,
+    category: 'Söt',
 }, {
     donutTitle: 'Banana suprice',
     donutImg1: './images/banansuprice.jpg',
     donutImg2: './images/banansuprice2.jpg',
     donutAlt: 'munk med banansmak',
     donutPrice: '20',
-    amount: 0
+    amount: 0,
+    category: 'Söt',
 },{
     donutTitle: 'Blåbär',
     donutImg1: './images/blueberry.jpg',
     donutImg2: './images/blueberry2.jpg',
     donutAlt: 'munk med blåbärssmak',
     donutPrice: '15',
-    amount: 0
+    amount: 0,
+    category: 'Sur',
 },{
     donutTitle: 'Karamellchoklad',
     donutImg1: './images/caramellchoklad.jpg',
     donutImg2: './images/caramellchoklad2.jpg',
     donutAlt: 'munk med karamellchoklad smak',
     donutPrice: '18',
-    amount: 0
+    amount: 0,
+    category: 'Söt',
 },{
     donutTitle: 'Chunky monkey',
     donutImg1: './images/chunkymonkey.jpg',
     donutImg2: './images/chunkymonkey2.jpg',
     donutAlt: 'munk med Chunky munky smak',
     donutPrice: '25',
-    amount: 0
+    amount: 0,
+    category: 'Söt',
 },{
     donutTitle: 'Citronfromage',
     donutImg1: './images/citronfromage.jpg',
     donutImg2: './images/citronfromage2.jpg',
     donutAlt: 'munk med citron smak',
     donutPrice: '18',
-    amount: 0
+    amount: 0,
+    category: 'Sur',
 },{
     donutTitle: 'Hallon-choklad',
     donutImg1: './images/hallonchoklad.jpg',
     donutImg2: './images/hallonchoklad2.jpg',
     donutAlt: 'munk med citron hallon och choklad smak',
     donutPrice: '20',
-    amount: 0
+    amount: 0,
+    category: 'Söt',
 },{
     donutTitle: 'Jordgrubbsdröm',
     donutImg1: './images/strawberrydream.jpg',
     donutImg2: './images/strawberrydream2.jpg',
     donutAlt: 'munk med jordgubbs smak',
     donutPrice: '15',
-    amount: 0
+    amount: 0,
+    category: 'Söt',
 },{
     donutTitle: 'Lakrits',
     donutImg1: './images/lakrits.jpg',
     donutImg2: './images/lakrits2.jpg',
     donutAlt: 'munk med laktris smak',
     donutPrice: '15',
-    amount: 0
+    amount: 0, 
+    category: 'Salt',
 },{
     donutTitle: 'Mandelknäck',
     donutImg1: './images/caramell.jpg',
     donutImg2: './images/caramell2.jpg',
     donutAlt: 'munk med mandel och knäck smak',
     donutPrice: '15',
-    amount: 0
+    amount: 0,
+    category: 'Söt',
 }];
+
+donutCards.sort((donutCard1, donutCard2) => donutCard1.donutPrice - donutCard2.donutPrice);
+
+
+console.table(donutCards);
 
 for(let i = 0; i < donutCards.length; i++){ // Varje gång loopen körs kommer vår artikel läggas in i vår html struktur i vår section och alla 10 korten kommer upp i webben
 donutCardsContainer.innerHTML += 
@@ -92,11 +107,11 @@ donutCardsContainer.innerHTML +=
         <h3>${donutCards[i].donutTitle}</h3 id="donutCardHeader">
         </div>
         <div class="rating">
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
         </div>
     <section class="donutCardContainer">
         <div class="donutCardImgContainer">
@@ -594,25 +609,3 @@ om det finns några fel
   eventuella beställda munkar/produkter (alltså antalet återställs till 0) 
   (Det ska finnas ett fält för att mata in en rabattkod.)*/
 
-  const ratingStars = [...document.getElementsByClassName("rating__star")];
-
-  function executeRating(stars) {
-    const starClassActive = "rating__star fas fa-star";
-    const starClassInactive = "rating__star far fa-star";
-    const starsLength = stars.length;
-    let i;
-    }
-
-    stars.map((star) => {
-        star.onclick = () => {
-           i = stars.indexOf(star);
-  
-           if (star.className===starClassInactive) {        
-              for (i; i >= 0; --i) stars[i].className = starClassActive;
-           } else {
-              for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-           }
-        };
-     });   
-
-    executeRating(ratingStars);
