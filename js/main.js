@@ -110,13 +110,13 @@ const donutCards = [ // En array med varje donut kort som objekt
 ---------------------------------------------------------------------------------------------------------*/
 
 const frukt = donutCards.filter(donutCard => donutCard.category === 'frukt');
-console.table(frukt);
+//console.table(frukt);
 
 const bär = donutCards.filter(donutCard => donutCard.category === 'bär');
-console.table(bär);
+//console.table(bär);
 
 const godis = donutCards.filter(donutCard => donutCard.category === 'godis');
-console.table(godis);
+//console.table(godis);
 
 /*--------------------------------------------------------------------------------------------------------
 -----------------------------------Rating-------------------------------------------------------------
@@ -141,14 +141,24 @@ console.table(5);
 ----------------------------------filtrering på pris--------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------*/
 
-donutCards.sort((donutCard1, donutCard2) => donutCard2.donutPrice - donutCard1.donutPrice);  /* Filtrerar från högsta till lägsta pris*/
+/*donutCards.sort((donutCard1, donutCard2) => donutCard2.donutPrice - donutCard1.donutPrice);  /* Filtrerar från högsta till lägsta pris
 console.table(donutCards);
 
-donutCards.sort((donutCard1, donutCard2) => donutCard1.donutPrice - donutCard2.donutPrice);  /* Filtrerar från lägsta till högsta pris */
-console.table(donutCards);
+donutCards.sort((donutCard1, donutCard2) => donutCard1.donutPrice - donutCard2.donutPrice);  /* Filtrerar från lägsta till högsta pris 
+console.table(donutCards); */
 
-/*donutCards.sort((donutCard1, donutCard2) => donutCard2.rating - donutCard1.rating);  /* Filtrerar rating från 5 till 1 stjärna
-console.table(donutCards);      behövs inte för uppgiften */
+const priceRangeSlider = document.querySelector('#priceRange');
+const currentRangeValue = document.querySelector('#currentRangeValue');  //om funktionen ska återanvändas bra att spara i en variabel
+
+function changePriceRange() {
+    const currentPrice = priceRangeSlider.value;
+    currentRangeValue.innerHTML = currentPrice;
+    console.log(currentPrice);
+}
+
+priceRangeSlider.addEventListener('input', changePriceRange);
+
+
 
 
 for(let i = 0; i < donutCards.length; i++){ // Varje gång loopen körs kommer vår artikel läggas in i vår html struktur i vår section och alla 10 korten kommer upp i webben
