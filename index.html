@@ -39,13 +39,25 @@
                     </a>                          
             </ul>
         </div>
-    </nav>
+    </nav>           
+    
     <main>
         <section>
             <div class="donutFlexWrap">
                 <div class="ourDonuts" id="ourdonuts">
                     <h2>Våra munkar</h2>
                 </div>
+                <div class="priceRange"  
+                <label>
+                    <span>Prisklass</span>
+                    <span class="flex">
+                        <span>0 kr</span>
+                        <input type="range" min="0" max="25" value="25" id="priceRange" step="5">
+                        <span>25 kr</span><br>
+                    </span>
+                    <span id="currentRangeValue">25</span> kr
+                    </label>  
+                </div> 
                 <div class="ourDonutsDropdownContainer">
                     <div class="ourDonutsDropdown"> <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover-->
                         <button class="ourDonutsDropBtn">Sortera efter</button>
@@ -55,20 +67,7 @@
                         <a href="#">Kategori</a>
                         <a href="#">Rating</a>
                         </div>
-                    </div>
-                    <div class="Prisklass"
-                    <p>
-                        <label>
-                          <span>Prisklass</span>
-                          <span class="flex">
-                            <span>0 kr</span>
-                            <input type="range" min="0" max="25" value="25" id="priceRange" step="5"
-                            <span>25 kr</span>
-                          </span>
-                          <span id="currentRangeValue">25</span> kr
-                        </label>
-                      </p>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <section class="donutCardWraper" id="donutCards">

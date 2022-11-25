@@ -137,6 +137,7 @@ const five = donutCards.filter(donutCard => donutCard.rating === '5');
 console.table(5);
 
 
+
 /*----------------------------------------------------------------------------------------------------------
 ----------------------------------filtrering på pris--------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------*/
@@ -150,13 +151,13 @@ console.table(donutCards); */
 const priceRangeSlider = document.querySelector('#priceRange');
 const currentRangeValue = document.querySelector('#currentRangeValue');  //om funktionen ska återanvändas bra att spara i en variabel
 
-function changePriceRange() {
+function changePriceRange() {                       // funktion för aktuellt pris 
     const currentPrice = priceRangeSlider.value;
     currentRangeValue.innerHTML = currentPrice;
     console.log(currentPrice);
 }
 
-priceRangeSlider.addEventListener('input', changePriceRange);
+priceRangeSlider.addEventListener('input', changePriceRange);   // Kopplar till input-verktyget
 
 
 

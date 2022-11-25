@@ -146,6 +146,14 @@ nav i {
 
 .ourDonutsDropBtn:hover {background-color: rgb(49, 48, 48);}
 
+
+.priceRange {
+    display: block;
+    text-align: right;
+    position: relative;
+}
+
+
 /*---------------------------------------------------------
 -------------------Dounat card-----------------------------
 ----------------------------------------------------------*/
@@ -607,3 +615,4 @@ footer {
 .checked {  
    color: #fcbb08b2;
 }
+
