@@ -47,27 +47,44 @@
                 <div class="ourDonuts" id="ourdonuts">
                     <h2>Våra munkar</h2>
                 </div>
-                <div class="priceRange"  
-                <label>
-                    <span>Prisklass</span>
-                    <span class="flex">
-                        <span>0 kr</span>
-                        <input type="range" min="0" max="25" value="25" id="priceRange" step="5">
-                        <span>25 kr</span><br>
-                    </span>
-                    <span id="currentRangeValue">25</span> kr
-                    </label>  
-                </div> 
                 <div class="ourDonutsDropdownContainer">
-                    <div class="ourDonutsDropdown"> <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover-->
-                        <button class="ourDonutsDropBtn">Sortera efter</button>
+                    <div class="ourDonutsDropdown"> 
+                        <label>
+                        <input type="radio" donutTitle="categoryFilter" value="donutTitle" />
+                        Namn
+                        </label>
+                        <label>
+                        <input type="radio" donutTitle="categoryFilter" value="category" />
+                        Kategori 
+                        </label>
+                        <label>
+                        <input type="radio" donutTitle="categoryFilter" value="rating" />
+                        Rating 
+                        </label>
+                        <label>
+                        <input type="radio" donutTitle="categoryFilter" value="all" checked />
+                        Visa alla
+                        </label><br><br>
+                    </div>
+                  
+                    <div class="priceRange"  
+                        <label>
+                        <span>Prisklass</span>
+                        <span class="flex">
+                            <span>0 - 25 kr</span>
+                            <input type="range" min="0" max="25" value="25" id="priceRange" step="5">
+                            <br>
+                        </span>
+                        <span id="currentRangeValue">25 kr</span>        
+                    </div>                        
+                        
+                        <!--- <button class="ourDonutsDropBtn">Sortera efter</button>
                         <div class="ourDounatsDropdownContent">
                         <a href="#">Namn</a>
                         <a href="#">Pris</a>
                         <a href="#">Kategori</a>
-                        <a href="#">Rating</a>
-                        </div>
-                    </div> 
+                        <a href="#">Rating</a>    
+                        </div>--->                 
                 </div>
             </div>
             <section class="donutCardWraper" id="donutCards">

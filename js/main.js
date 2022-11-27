@@ -18,91 +18,91 @@ const donutCards = [ // En array med varje donut kort som objekt
     donutImg1: './images/apelsinmunk.jpg',
     donutImg2: './images/apelsinmunk2.jpg',
     donutAlt: 'Apelsinmunk',
-    donutPrice: '15',
+    donutPrice: 15,
     amount: 0,
     category: 'frukt',
-    rating: '4',
+    rating: 4,
 }, {
     donutTitle: 'Banana suprice',
     donutImg1: './images/banansuprice.jpg',
     donutImg2: './images/banansuprice2.jpg',
     donutAlt: 'munk med banansmak',
-    donutPrice: '20',
+    donutPrice: 20,
     amount: 0,
     category: 'frukt',
-    rating: '5',
+    rating: 5,
 },{
     donutTitle: 'Blåbär',
     donutImg1: './images/blueberry.jpg',
     donutImg2: './images/blueberry2.jpg',
     donutAlt: 'munk med blåbärssmak',
-    donutPrice: '15',
+    donutPrice: 15,
     amount: 0,
     category: 'bär',
-    rating: '3',
+    rating: 3,
 },{
     donutTitle: 'Karamellchoklad',
     donutImg1: './images/caramellchoklad.jpg',
     donutImg2: './images/caramellchoklad2.jpg',
     donutAlt: 'munk med karamellchoklad smak',
-    donutPrice: '18',
+    donutPrice: 18,
     amount: 0,
     category: 'godis',
-    rating: '4',
+    rating: 4,
 },{
     donutTitle: 'Chunky monkey',
     donutImg1: './images/chunkymonkey.jpg',
     donutImg2: './images/chunkymonkey2.jpg',
     donutAlt: 'munk med Chunky munky smak',
-    donutPrice: '25',
+    donutPrice: 25,
     amount: 0,
     category: 'godis',
-    rating: '5',
+    rating: 5,
 },{
     donutTitle: 'Citronfromage',
     donutImg1: './images/citronfromage.jpg',
     donutImg2: './images/citronfromage2.jpg',
     donutAlt: 'munk med citron smak',
-    donutPrice: '18',
+    donutPrice: 18,
     amount: 0,
     category: 'frukt',
-    rating: '3',
+    rating: 3,
 },{
     donutTitle: 'Hallon-choklad',
     donutImg1: './images/hallonchoklad.jpg',
     donutImg2: './images/hallonchoklad2.jpg',
     donutAlt: 'munk med citron hallon och choklad smak',
-    donutPrice: '20',
+    donutPrice: 20,
     amount: 0,
     category: 'bär',
-    rating: '4',
+    rating: 4,
 },{
     donutTitle: 'Jordgubbsdröm',
     donutImg1: './images/strawberrydream.jpg',
     donutImg2: './images/strawberrydream2.jpg',
     donutAlt: 'munk med jordgubbs smak',
-    donutPrice: '15',
+    donutPrice: 15,
     amount: 0,
     category: 'bär',
-    rating: '5',
+    rating: 5,
 },{
     donutTitle: 'Lakrits',
     donutImg1: './images/lakrits.jpg',
     donutImg2: './images/lakrits2.jpg',
     donutAlt: 'munk med laktris smak',
-    donutPrice: '15',
+    donutPrice: 15,
     amount: 0, 
     category: 'godis',
-    rating: '2',
+    rating: 2,
 },{
     donutTitle: 'Mandelknäck',
     donutImg1: './images/caramell.jpg',
     donutImg2: './images/caramell2.jpg',
     donutAlt: 'munk med mandel och knäck smak',
-    donutPrice: '15',
+    donutPrice: 15,
     amount: 0,
     category: 'godis',
-    rating: '4',
+    rating: 4,
 }];
 
 /*--------------------------------------------------------------------------------------------------------
@@ -121,20 +121,20 @@ const godis = donutCards.filter(donutCard => donutCard.category === 'godis');
 /*--------------------------------------------------------------------------------------------------------
 -----------------------------------Rating-------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
-const one = donutCards.filter(donutCard => donutCard.rating === '1');
-console.table(1);
+const one = donutCards.filter(donutCard => donutCard.rating === 1);
+//console.table(1);
 
-const two = donutCards.filter(donutCard => donutCard.rating === '2');
-console.table(2);
+const two = donutCards.filter(donutCard => donutCard.rating === 2);
+//console.table(2);
 
-const three = donutCards.filter(donutCard => donutCard.rating === '3');
-console.table(3);
+const three = donutCards.filter(donutCard => donutCard.rating === 3);
+//console.table(3);
 
-const four = donutCards.filter(donutCard => donutCard.rating === '4');
-console.table(4);
+const four = donutCards.filter(donutCard => donutCard.rating === 4);
+//console.table(4);
 
-const five = donutCards.filter(donutCard => donutCard.rating === '5');
-console.table(5);
+const five = donutCards.filter(donutCard => donutCard.rating === 5);
+//console.table(5);
 
 
 
@@ -159,6 +159,19 @@ function changePriceRange() {                       // funktion för aktuellt pr
 
 priceRangeSlider.addEventListener('input', changePriceRange);   // Kopplar till input-verktyget
 
+/*--------------------------------------------------------------------------------------------------------
+-----------------------------------sortering på pris, kategori, rating-------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+
+const sorted = donutCards.sort((a, b) => {      //sortering på namn
+    if (a.donutTitle < b.donutTitle) {
+      return -1;
+    }
+    if (a.donutTitle > b.donutTitle) {
+      return 1;
+    }
+    return 0;
+  });
 
 
 

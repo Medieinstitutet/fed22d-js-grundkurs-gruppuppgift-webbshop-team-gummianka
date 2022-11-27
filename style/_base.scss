@@ -95,24 +95,44 @@ nav i {
 }
 
 /*---------------------------------------------------------
--------------------Dropdown sorting donuts------------------------
+-------------------------sorting donuts------------------------
 ----------------------------------------------------------*/
 
-.ourDonutsDropdownContainer{
+.ourDonutsDropdownContainer{    // Ändra namn från dropdown till buttons?
     max-width: 700px;
-    margin: 0 auto;
+    margin-right: 50px; 
     text-align: right;
+    padding: 10px;
+    font-size: 2rem;
 }
 
 .ourDonutsDropdown{
-    display: inline-block;
+    display: block;
     position: relative;
-    font-size: 1rem;
+    margin-left: 55px; 
+    text-align: left;
     max-width: 750px;
     font-family: 'Dosis', sans-serif;
+    color:rgb(26, 108, 111);
+    gap: 10px;
 }
 
-.ourDonutsDropBtn{
+.priceRange {
+    display: block;   
+    position: relative;
+    margin-right: 10px;
+    font-family: 'Dosis', sans-serif;
+    color:rgb(26, 108, 111);
+    font-weight: bold; 
+}
+
+#currentRangeValue {
+    color: rgb(214, 6, 214);
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+/*.ourDonutsDropBtn{
     background-color:#131313;
     color: white;
     padding: 16px;
@@ -144,14 +164,10 @@ nav i {
 
 .ourDonutsDropdown:hover  .ourDounatsDropdownContent {display: block;}
 
-.ourDonutsDropBtn:hover {background-color: rgb(49, 48, 48);}
+.ourDonutsDropBtn:hover {background-color: rgb(49, 48, 48);} */
 
 
-.priceRange {
-    display: block;
-    text-align: right;
-    position: relative;
-}
+
 
 
 /*---------------------------------------------------------
