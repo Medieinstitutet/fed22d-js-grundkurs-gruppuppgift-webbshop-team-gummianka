@@ -179,18 +179,17 @@ function changePriceRange() {                       // funktion för aktuellt pr
 
 
 function updateCategoryFilter(e) {
-    // Hämta värdet på vald radio button
-    const selectedCategory = e.currentTarget.value;
+   
+    const selectedCategory = e.currentTarget.value;   //Hämta radiobutton-värde
     console.log(selectedCategory);
   
     if (selectedCategory === 'all') {
-      filteredProducts = [...donutCards]; // copy reference
+      filteredProducts = [...donutCards]; 
     } else {
-      // Töm filtered products på tidigare filtrering
-      filteredProducts = [];
+      
+      filteredProducts = [];           //Töm tidigare filtrering
   
-      // Loopa igenom alla produkter
-      for (let i = 0; i < donutCards.length; i++) {
+      for (let i = 0; i < donutCards.length; i++) {   //Loopa igenom alla donuts
         const prod = donutCards[i];
       }
     }
