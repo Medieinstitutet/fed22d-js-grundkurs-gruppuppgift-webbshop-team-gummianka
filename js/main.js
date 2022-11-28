@@ -106,7 +106,7 @@ const donutCards = [ // En array med varje donut kort som objekt
 }];
 
 /*--------------------------------------------------------------------------------------------------------
------------------------------------kategorier-------------------------------------------------------------
+-----------------------------------skapat kategorier-------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
 
 const frukt = donutCards.filter(donutCard => donutCard.category === 'frukt');
@@ -119,7 +119,7 @@ const godis = donutCards.filter(donutCard => donutCard.category === 'godis');
 //console.table(godis);
 
 /*--------------------------------------------------------------------------------------------------------
------------------------------------Rating-------------------------------------------------------------
+-----------------------------------skapat rating-------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
 const one = donutCards.filter(donutCard => donutCard.rating === 1);
 //console.table(1);
@@ -137,7 +137,6 @@ const five = donutCards.filter(donutCard => donutCard.rating === 5);
 //console.table(5);
 
 
-
 /*----------------------------------------------------------------------------------------------------------
 ----------------------------------filtrering på pris--------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------*/
@@ -148,31 +147,76 @@ console.table(donutCards);
 donutCards.sort((donutCard1, donutCard2) => donutCard1.donutPrice - donutCard2.donutPrice);  /* Filtrerar från lägsta till högsta pris 
 console.table(donutCards); */
 
+const productsListing = document.querySelector('#productsListing');
+const categoryFilterRadios = document.querySelectorAll('[name="categoryFilter"]');
 const priceRangeSlider = document.querySelector('#priceRange');
-const currentRangeValue = document.querySelector('#currentRangeValue');  //om funktionen ska återanvändas bra att spara i en variabel
+const currentRangeValue = document.querySelector('#currentRangeValue');  
+
+let filteredProducts = [...donutCards];
+let filteredProductsInPriceRange = [...donutCards];
+
+function renderProducts() {
+    productsListing.innerHTML = '';
+  
+    filteredProductsInPriceRange.forEach((donutCard) => {
+        productsListing.innerHTML += `
+            <div class="product">
+                ${donutCard.name}<br>
+                Price: ${donutCard.price} kr<br>
+                Categories: ${donutCard.category.join(', ')}
+            </div>
+        `;
+    });
+}
 
 function changePriceRange() {                       // funktion för aktuellt pris 
     const currentPrice = priceRangeSlider.value;
     currentRangeValue.innerHTML = currentPrice;
-    console.log(currentPrice);
+
+    filteredProductsInPriceRange = filteredProducts.filter(donutCard => donutCard.price <= currentPrice);
+    renderProducts();
 }
 
-priceRangeSlider.addEventListener('input', changePriceRange);   // Kopplar till input-verktyget
 
+function updateCategoryFilter(e) {
+    // Hämta värdet på vald radio button
+    const selectedCategory = e.currentTarget.value;
+    console.log(selectedCategory);
+  
+    if (selectedCategory === 'all') {
+      filteredProducts = [...donutCards]; // copy reference
+    } else {
+      // Töm filtered products på tidigare filtrering
+      filteredProducts = [];
+  
+      // Loopa igenom alla produkter
+      for (let i = 0; i < donutCards.length; i++) {
+        const prod = donutCards[i];
+      }
+    }
+}
+
+changePriceRange();
+
+priceRangeSlider.addEventListener('input', updateCategoryFilter);
+
+renderProducts();
 /*--------------------------------------------------------------------------------------------------------
------------------------------------sortering på pris, kategori, rating-------------------------------------------------------------
+-----------------------------------sortering på namn från A-Ö-------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
 
-const sorted = donutCards.sort((a, b) => {      //sortering på namn
+const sorted = donutCards.sort((a, b) => {      
     if (a.donutTitle < b.donutTitle) {
       return -1;
     }
-    if (a.donutTitle > b.donutTitle) {
+    if (a.donutTitle > b.donutTitle) {      
       return 1;
     }
     return 0;
   });
-
+/*--------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
 
 
 for(let i = 0; i < donutCards.length; i++){ // Varje gång loopen körs kommer vår artikel läggas in i vår html struktur i vår section och alla 10 korten kommer upp i webben
