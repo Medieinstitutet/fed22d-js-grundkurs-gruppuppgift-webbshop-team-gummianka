@@ -105,36 +105,46 @@ const donutCards = [ // En array med varje donut kort som objekt
     rating: 4,
 }];
 
-/*--------------------------------------------------------------------------------------------------------
------------------------------------skapat kategorier-------------------------------------------------------------
----------------------------------------------------------------------------------------------------------*/
+const sortBtns = document.querySelectorAll('.ourDonutsDropdown input[type="radio"]');
 
-const frukt = donutCards.filter(donutCard => donutCard.category === 'frukt');
-//console.table(frukt);
+for(let i = 0; i < sortBtns.length; i++){
+    sortBtns[i].addEventListener('click', clickedSortBtn);
+} 
 
-const bär = donutCards.filter(donutCard => donutCard.category === 'bär');
-//console.table(bär);
+createDonuts(donutCards);
 
-const godis = donutCards.filter(donutCard => donutCard.category === 'godis');
-//console.table(godis);
+function clickedSortBtn(e){
+    const clickedBtn = e.currentTarget.id
+    
+    if(clickedBtn == 'name'){
+        donutCards.sort((a, b) => a.donutTitle.localeCompare(b.donutTitle));
+    } else if (clickedBtn == 'rating'){
+        donutCards.sort((a, b) => a.rating - b.rating)
+    } else if(clickedBtn == 'fruit'){
+        const fruit = donutCards.filter(donutCard => donutCard.category === 'frukt');
+        createDonuts(fruit);
+        return;
+    } else if(clickedBtn == 'berrys'){
+        const berrys = donutCards.filter(donutCard => donutCard.category === 'bär');
+        createDonuts(berrys);
+        return;
+    } else if(clickedBtn == 'candy'){
+        const candy = donutCards.filter(donutCard => donutCard.category === 'godis');
+        createDonuts(candy);
+        return;
+    }
 
-/*--------------------------------------------------------------------------------------------------------
------------------------------------skapat rating-------------------------------------------------------------
----------------------------------------------------------------------------------------------------------*/
-const one = donutCards.filter(donutCard => donutCard.rating === 1);
-//console.table(1);
+    createDonuts(donutCards);
+} 
 
-const two = donutCards.filter(donutCard => donutCard.rating === 2);
-//console.table(2);
 
-const three = donutCards.filter(donutCard => donutCard.rating === 3);
-//console.table(3);
 
-const four = donutCards.filter(donutCard => donutCard.rating === 4);
-//console.table(4);
 
-const five = donutCards.filter(donutCard => donutCard.rating === 5);
-//console.table(5);
+//donutCards.sort((a, b) => b.donutPrice - a.donutPrice);
+
+
+
+
 
 
 /*----------------------------------------------------------------------------------------------------------
@@ -155,26 +165,13 @@ const currentRangeValue = document.querySelector('#currentRangeValue');
 let filteredProducts = [...donutCards];
 let filteredProductsInPriceRange = [...donutCards];
 
-function renderProducts() {
-    productsListing.innerHTML = '';
-  
-    filteredProductsInPriceRange.forEach((donutCard) => {
-        productsListing.innerHTML += `
-            <div class="product">
-                ${donutCard.name}<br>
-                Price: ${donutCard.price} kr<br>
-                Categories: ${donutCard.category.join(', ')}
-            </div>
-        `;
-    });
-}
+
 
 function changePriceRange() {                       // funktion för aktuellt pris 
     const currentPrice = priceRangeSlider.value;
     currentRangeValue.innerHTML = currentPrice;
 
     filteredProductsInPriceRange = filteredProducts.filter(donutCard => donutCard.price <= currentPrice);
-    renderProducts();
 }
 
 
@@ -183,7 +180,7 @@ function updateCategoryFilter(e) {
     const selectedCategory = e.currentTarget.value;   //Hämta radiobutton-värde
     console.log(selectedCategory);
   
-    if (selectedCategory === 'all') {
+    if (selectedCategory === 25) {
       filteredProducts = [...donutCards]; 
     } else {
       
@@ -199,45 +196,39 @@ changePriceRange();
 
 priceRangeSlider.addEventListener('input', updateCategoryFilter);
 
-renderProducts();
-/*--------------------------------------------------------------------------------------------------------
------------------------------------sortering på namn från A-Ö-------------------------------------------------------------
----------------------------------------------------------------------------------------------------------*/
-
-const sorted = donutCards.sort((a, b) => {      
-    if (a.donutTitle < b.donutTitle) {
-      return -1;
-    }
-    if (a.donutTitle > b.donutTitle) {      
-      return 1;
-    }
-    return 0;
-  });
 /*--------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
 
+function createDonuts(arr){
 
-for(let i = 0; i < donutCards.length; i++){ // Varje gång loopen körs kommer vår artikel läggas in i vår html struktur i vår section och alla 10 korten kommer upp i webben
-donutCardsContainer.innerHTML += 
+donutCardsContainer.innerHTML = '';
+    for(let i = 0; i < arr.length; i++){ // Varje gång loopen körs kommer vår artikel läggas in i vår html struktur i vår section och alla 10 korten kommer upp i webben
+
+        let rating = '';
+
+        for(let j = 0; j < 5; j++){
+
+            if (j < donutCards[i].rating){
+                rating += '<span class="fa fa-star checked"></span>'
+            } else{
+                rating += '<span class="fa fa-star"></span>'
+            }
+        }
+
+        donutCardsContainer.innerHTML += 
 `<article class="donutCard">
     <div class="donutCardHeaderContainer">
-        <h3>${donutCards[i].donutTitle}</h3 id="donutCardHeader">
-        </div>
-        <div class="rating">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+        <h3>${arr[i].donutTitle}</h3 id="donutCardHeader">
         </div>
     <section class="donutCardContainer">
         <div class="donutCardImgContainer">
             <div class="controlsImgSlideshow" id="controlsImgSlideshow">
                 <div class="images">
-                    <img src="${donutCards[i].donutImg1}" alt="" class="donutCardImg1" id="donutcardImg1">
-                    <img src="${donutCards[i].donutImg2}" alt="" class="donutCardImg2" id="donutCardImg2">                                 
+                    <img src="${arr[i].donutImg1}" alt="" class="donutCardImg1" id="donutcardImg1">
+                    <img src="${arr[i].donutImg2}" alt="" class="donutCardImg2" id="donutCardImg2">                                 
                 </div>
+                <span class="ratingClass" id="ratingId">${rating}</span>
                 <div class="controls">
                     <button class="left" id="prevImage">
                         <span class="material-symbols-outlined">chevron_left</span>
@@ -247,7 +238,7 @@ donutCardsContainer.innerHTML +=
                     </button>
                 </div>
             </div>
-            <p id="donutCardPrice">${donutCards[i].donutPrice} kr/st</p>
+            <p id="donutCardPrice">${arr[i].donutPrice} kr/st</p>
         </div>
         <div class='donutCardRating'></div>
         <br>
@@ -259,6 +250,8 @@ donutCardsContainer.innerHTML +=
     </section>
 </article>`
 };// data id i är för att knapparna ska få index som id 0123456789 så vi vet vilken av knapparna i arrayen vi klickat på
+
+}
 
 /*
 *Få våra + och - knappar att fungera
@@ -294,7 +287,7 @@ function removeNumber(e){
         donutCards[clickedDonut].amount -= 1; // [] de skrivet vi in för att komma åt de vi klickade på. Och de andra länkar till vår lista och amount, de gör att när vi klickar ökar amount med 1 varje gång på rätt donut
 
         amountEl.value = donutCards[clickedDonut].amount; //Gör så att value i input = amount i våra objekt
-    }console.dir(amountEl.value)
+    }
     
     UpdatedonutsBasket();// kallar på min funktion som lägger till och tar bort donuts från basket
 }
@@ -345,7 +338,7 @@ function totalPrice(){ //Uppdatera totalsumman i varukorgen
     
     for(let i = 0; i < donutCards.length; i++){// loopar igenom alla så jag hittar vilka som har värde över 0
         sum += (donutCards[i].amount * donutCards[i].donutPrice)//sum är sum + antal * pris. += för att den ska lägga till på min summa hela tiden annars skriver den bara den jag klickar på
-    console.dir(donutCards[i].amount)}
+    }
     totalPriceBasket.innerHTML += // lägger till summan
     `<span>${sum}</span>`
 } 
