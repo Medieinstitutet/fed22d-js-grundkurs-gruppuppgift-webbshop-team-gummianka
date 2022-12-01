@@ -309,11 +309,13 @@ let yourBasketIsEmpty = document.querySelector('#emptyBasket');                 
 function UpdatedonutsBasket(){
     basketDonuts.innerHTML = '';                                                         
     let sum = 0;
+    
    
     // Gör så att delsumman drar av 10% rabatt när man beställer 10 eller fler munkar av samma sort
     for(let i = 0; i < donutCards.length; i++){                                         
         if(donutCards[i].amount >= 10){
             sum = ((donutCards[i].amount * donutCards[i].donutPrice) * 0.9);
+            sum= Math.round(sum);
         } else{
             sum = (donutCards[i].amount * donutCards[i].donutPrice);
         }
@@ -364,7 +366,7 @@ function UpdatedonutsBasket(){
     }
 
 /*--------------------Luciamunk--Slut----------------------*/    
-
+ 
     totalPrice();                                                                   // sitter utanför if statement för att den ska skriva ut 0 eftersom jag satt att dern bara ska skriva ut html strukturen om amount är 1 eller större
     maxSummaryNoInvoice();  // Körs för funktionen Ta bort Faktura över 800 kr. Bytes till Summery senare.
 };
@@ -481,7 +483,7 @@ function emptyBasket (e){
         input.value = 0;
     });
 
-    discountInput.value = ''
+    discountInput.value = ''                                        // tömmer rabattfältet ifall något är skrivet där
     
     for(let i = 0; i < donutCards.length; i++){                     // loopar igenom och kollar alla amount
         donutCards[i].amount = 0;                                   //ändrar alla amount till 0
