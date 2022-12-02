@@ -18,16 +18,28 @@ h1 {
 .ourDonutsDropdown{       
     display: flex;
     flex-direction: row;
-    margin: 0px;
     justify-content: center;
-    gap: 10vw;
-    margin-left: 0px; 
+    gap: 90px;
+    max-width: 600px; 
+}
+
+.PriceCategoriDiv{
+    gap: 0px;
+}
+
+.pickPrice{
+    width: 170px;
+}
+
+.PriceCategoriDiv div div{
+    margin-bottom: 5px;
 }
 
 .priceRange {
     display: block;   
     position: relative;
     margin-left: 60px;
+    margin-top: 30px;
     font-family: 'Dosis', sans-serif;
     color:rgb(26, 108, 111);
     font-weight: bold; 
@@ -37,8 +49,13 @@ h1 {
 #currentRangeValue {
     color: rgb(214, 6, 214);
     font-weight: bold;
-    margin-left: 175px;
+    margin-left: 50px;
     font-size: 1.0rem;
+}
+
+.nameRatingShowalldiv{
+    margin-top: 25px;
+    gap: 20px;
 }
 
 /*---------------------------------------------------------
