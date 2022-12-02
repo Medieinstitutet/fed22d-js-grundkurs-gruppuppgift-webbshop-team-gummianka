@@ -311,7 +311,7 @@ function UpdatedonutsBasket(){
     let sum = 0;
     
    yourBasketIsEmpty.style.display = 'flex';
-   
+
     // Gör så att delsumman drar av 10% rabatt när man beställer 10 eller fler munkar av samma sort
     for(let i = 0; i < donutCards.length; i++){                                         
         if(donutCards[i].amount >= 10){
@@ -400,9 +400,10 @@ let totalSumToPay = 0;                                                          
 function totalPrice(){ 
     let sum = 0;  
     let startShippingSum = 0;
-    let today = new Date(); 
+    let today = new Date('November 28, 2022 09:00:00'); 
     let amount = 0;
-    
+    let mondayText = document.querySelector('#mondayDiscount')
+
     // Weeknumber = veckans nummer                                              
     startDate = new Date(today.getFullYear(), 0, 1);        
     var days = Math.floor((today - startDate) /

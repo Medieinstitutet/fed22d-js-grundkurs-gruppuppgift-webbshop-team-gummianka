@@ -407,7 +407,7 @@ input[type=number] {
 }
 
 .basket_heading{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-left: 20px; 
 }
 
@@ -552,25 +552,30 @@ input[type=number] {
     margin-left: 10px;
 }
 
+#mondayDiscount{
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
 .total_amount{
     margin-left: 10px;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .total_amount span{
     margin-right: 5px;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .sumToPayContainer{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .summery{
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-left: 20px;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 .emptyBasketBtn{
