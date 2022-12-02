@@ -1,0 +1,729 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(243, 243, 243);
+    overflow-x: hidden;
+}
+
+/*---------------------------------------------------------------------------------------------------
+-------------------------------- Header---------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------*/
+
+header {
+    position: relative;    
+    padding: 20px;
+    color: rgb(15, 88, 96);
+    background-image: url("../images/donut_in_napkin2.jpg");
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    background-repeat: no-repeat;     
+}
+
+h1 {
+    font-family: 'Sofia';   
+    font-size: 4rem;
+    display: block;
+    font-style: italic;
+    text-align: right;
+    position: relative;
+    padding-top: 35px;
+    padding-right: 35px;
+}
+
+/*---------------------------------------------------------------------------------------------------
+-------------------------------- Nav------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------*/
+
+.navLinks ul {
+    display: flex;
+    background-color: rgb(5, 54, 71);
+    margin-top: 0;
+}
+
+.menuList   {
+    list-style: none;
+}
+
+.navLinks_a {     
+    color:rgb(195, 237, 195);               
+    text-decoration: none;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    margin-left: 10px;                              
+    color:rgb(195, 237, 195);               
+    text-decoration: none;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.navLinks_a:hover {
+    color: rgb(192, 39, 115);
+  }
+
+nav ul {
+    padding: 20px;
+}
+
+.iconContainer {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    height: 50px;
+}
+
+nav a{
+    z-index: 1;
+}
+
+nav a i{
+    border: black solid 2px;
+    background-color: rgb(5, 54, 71);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav a i.fa  {
+    font-size:2rem;
+    color:rgb(182, 19, 146);
+    line-height: 50px;
+}
+
+.colorWhite{
+    color: white;
+    margin-left: 10px;
+    font-size: 1rem;
+    line-height: 50px;
+}
+
+/*---------------------------------------------------------
+-------------------------Our donuts------------------------
+----------------------------------------------------------*/
+
+.ourDonuts{
+    height: 80px;
+    text-align: center;
+    width: 100vw;
+}
+
+.ourDonuts h2{
+    line-height: 80px;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;    
+}
+/*---------------------------------------------------------
+-------------------------sorting donuts------------------------
+----------------------------------------------------------*/
+
+.ourDonutsDropdown{       
+    margin-left: 30px; 
+    font-family: 'Dosis', sans-serif;
+    color:rgb(26, 108, 111);
+    font-size: 1.5rem;
+}
+
+.nameRatingShowalldiv{
+    font-size: 1.5rem;
+    display: flex;
+    gap: 55px;
+}
+
+.categoriGroupP{
+    margin-bottom: 0px;
+}
+
+.ratingRadioButtons{
+    margin-left: 45px;
+}
+
+.nameRatingShowalldivs{
+    display: inline;
+}
+
+.priceRange {
+    display: block;   
+    position: relative;
+    margin-left: 60px;
+    font-family: 'Dosis', sans-serif;
+    color:rgb(26, 108, 111);
+    font-weight: bold; 
+    font-size: 1.0rem;
+}
+
+#currentRangeValue {
+    color: rgb(214, 6, 214);
+    font-weight: bold;
+    margin-left: 175px;
+    font-size: 1.0rem;
+}
+
+/*---------------------------------------------------------
+-------------------Donut card-----------------------------
+----------------------------------------------------------*/
+
+.donutCard {
+    background-color: pink;
+    max-width: 400px;
+    min-width: 100px;
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+/*Slideshow*/
+.controlsImgSlideshow{
+    position: relative;
+}
+
+.left{
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    border: none;
+    top: 60px;
+    cursor: pointer;
+}
+
+.right{
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    border: none;
+    top: 60px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.donutCardHeaderContainer{
+   height: 100px;
+   text-align: center;
+}
+
+.donutCardHeaderContainer h3{
+    line-height: 100px;
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.donutCardImgContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donutCardImgContainer img{
+    width: 100%;
+    max-width: 150px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1;
+}
+
+.donutCardContainer img.donutCardImg2{
+    display: none;
+}
+
+.donutCardImgContainer p{
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.donutCardRating{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.donutCardRating span{
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 1.5rem;
+}
+
+.checked{
+    color: yellow;
+}
+
+.donutCardButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.donutCardButtonContainer button{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.donutCardButtonContainer input{
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    border: grey 2px solid;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/*---------------------------------------------------------
+-------------------Information ----------------------------
+----------------------------------------------------------*/
+
+.informationText{
+    background-color: rgb(222, 247, 242);
+    min-height: 750px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.informationTextHeaderContainer{
+    height: 80px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.informationTextHeaderContainer h2{
+    line-height: 80px;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px #ffffff;
+    padding-top: 15px;
+}
+
+.informationUlContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informationUlText{
+    list-style:none;
+    font-size: 1.1rem;
+    padding:0;
+}
+
+.informationUlText li{
+    margin-top: 10px;
+    max-width: 600px;
+    min-height: 90px;
+    background-color: rgb(245, 239, 239);
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.informationUlIcons{
+    list-style:none;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0;
+}
+
+.informationUlIcons li{
+    display: none;
+    max-width: 60px;
+    min-height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+
+.fa-sack-dollar{
+    color: rgb(138, 123, 38);
+}
+
+.fa-truck-fast{
+    color: rgb(9, 9, 70);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------
+--------------------------------- Basket --------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------*/
+
+.section_basket{
+    background-color: rgb(248, 219, 242); /*Variabel som följer temat!?*/
+    padding: 10px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+.basket{
+    background-color: rgb(252, 252, 252);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.basketHeadingContainer{
+    height: 120px;
+}
+
+.middlepart_h2 {  
+    font-size: 3rem;
+    text-align: center;
+    line-height: 120px;
+    margin-bottom: 0;
+}
+
+.main_heading_basket{
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket_heading{
+    font-size: 1.6rem;
+    margin-left: 20px; 
+}
+
+.emptyBasketContainer{
+    height: 170px;
+    width: 85vw;
+    max-width: 540px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+}
+
+.emptyBasketContainer p{
+    margin-right: 5px
+}
+
+.basketDonuts {
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 170px;
+    margin: 0 auto;
+    background-color: pink;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.basketHeaderDonuts{
+    height: 60px;
+}
+
+.basketDonuts h3{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: 1px 1px #ffffff;
+    line-height: 60px;
+    font-size: 1.6rem;
+}
+
+.basketDonuts section{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.basketDonuts img{
+    width: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+.basketDonutsflex{
+    display: flex;
+    flex-direction: column;
+}
+
+.basketDonutsflex div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.basketDonuts h4{
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: 1px 1px #ffffff;
+    font-size: 1.3rem;
+}
+
+.basketDonuts p{
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.basket label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.basket label input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 20px;
+    height: 40px;
+    border: black solid 1px;
+    max-width: 400px;
+}
+
+.basket label p{
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.discount_button{  
+    cursor: pointer;
+    font-size: smaller;
+    font-size: 0.94rem;
+    background-color: rgb(96, 172, 73);  
+    border-radius: 5px;
+    height: 40px;
+    width: 130px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.basket_sum{
+    background-color: rgb(202, 206, 206);
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+.basket_sum div{
+    display: flex;
+    align-items: center;
+}
+
+.basket_sum div p{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.shipping_heading{
+    font-size: 1.2rem;
+    margin-left: 20px;
+}
+
+.shipping_amount{
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.total_amount{
+    margin-left: 10px;
+    font-size: 1.7rem;
+}
+
+.total_amount span{
+    margin-right: 5px;
+    font-size: 1.7rem;
+}
+
+.sumToPayContainer{
+    margin-top: 30px;
+}
+
+.summery{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.emptyBasketBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: smaller;
+    font-size: 0.94rem;
+    background-color: rgb(134, 45, 45);  
+    border-radius: 2px;
+    height: 40px;
+    width: 130px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+    color: rgb(241, 237, 237);
+
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------  Form   -----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.section-form{
+    background-image: url(../images/blueberrybackground.jpg);
+    background-size: cover;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+    
+.checkout_form{
+    background-color: rgb(252, 252, 252);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 700px;
+    margin-left: 0 auto;
+}
+
+label{
+    font-size: 4.5vw;
+}
+
+.input_group{
+    display: block;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.reset_form_button{
+    border: none;
+    font-size: larger;
+    font-weight: 600;
+    background-color:  rgb(248, 219, 242);  /*Får ej läggas till i variabel då denna ska vara fast färg.*/
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 6vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+.display-none {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.submit_form_button{
+    border: none;
+    font-size: larger;
+    font-weight: 600;
+    background-color: rgb(153, 219, 153);  /*Får ej läggas till i variabel då denna ska vara fast färg.*/
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+form p {
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+.errorMessage{
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+/*---------------------------------------------------------------------------------------------------
+-------------------------------- Footer----------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------*/
+
+footer {
+    background-color:rgb(222, 247, 242);
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+    position: relative;
+    display: flex;    
+}
+
+/*------------------------------------------------------------------------------------------------------------------
+--------------------------  Popup area  ----------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------*/
+
+.stopArea{
+    background-image: url(../images/aLotOfDounats.jpg); 
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+}
+
+.stopAreaTextArea{
+    z-index: 3;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 20vw;
+    height: 100vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.stopAreah2 {
+    padding-top: 25px;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4.1vw;
+}
+
+.stopAreaP {
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+}
+
+.stopAreaspan{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+}
+
+.stopAreaButton {
+    position: relative;
+    left:60vw;
+    width: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

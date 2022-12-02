@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Members:            Github:
+    Sofia Olsson        Sofilus
+    Therese Hölén       TessDevon
+    Camilla Ridesjö     c-ridesjo Camilla 
+
+# THANKS
+
+    Thanks to our expert teacher Jenni :) and our JS proficient rubber ducks <3.
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css

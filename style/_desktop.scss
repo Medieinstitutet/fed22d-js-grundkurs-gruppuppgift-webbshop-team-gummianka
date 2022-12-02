@@ -1,0 +1,204 @@
+h1 {
+    font-size: 6rem;
+    padding-right: 150px;
+}
+
+/*---------------------------------------------------------
+-------------------------Our donuts------------------------
+----------------------------------------------------------*/
+
+.ourDonuts h2{
+    font-size: 4rem;
+}
+
+/*---------------------------------------------------------
+-----------------------------sorting donuts-----------------
+----------------------------------------------------------*/
+
+.ourDonutsDropdown{       
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    justify-content: center;
+    gap: 10vw;
+    margin-left: 0px; 
+}
+
+.priceRange {
+    display: block;   
+    position: relative;
+    margin-left: 60px;
+    font-family: 'Dosis', sans-serif;
+    color:rgb(26, 108, 111);
+    font-weight: bold; 
+    font-size: 1.0rem;
+}
+
+#currentRangeValue {
+    font-weight: bold;
+    margin-left: 175px;
+    font-size: 1.0rem;
+}
+
+/*---------------------------------------------------------
+-------------------Donut card-----------------------------
+----------------------------------------------------------*/
+
+.donutCardWraper{
+    display: grid;
+    grid-template-columns: 345px 345px 345px 345px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.donutCard {
+    width: 270px;
+    margin: 0 auto;
+   margin-bottom: 50px; 
+}
+
+.donutCardHeaderContainer h3{
+    font-size: 2rem;
+}
+
+.donutCardImgContainer p{
+    font-size: 1.3rem;
+}
+
+/*---------------------------------------------------------
+-------------------Information ----------------------------
+----------------------------------------------------------*/
+
+.informationTextHeaderContainer{
+    height: 120px;
+    text-align: center;
+}
+
+.informationTextHeaderContainer h2{
+    line-height: 120px;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.informationUlText{
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.informationUlIcons{
+    font-size: 2.4rem;
+    margin-top: 0;
+}
+
+.informationUlIcons li{
+    display: block;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+#icon1{
+    margin-top: 90px;
+    margin-bottom: 0;
+}
+
+#icon2{
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#icon3{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#icon4{
+    margin-top: 20px;
+}
+
+#icon5{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------
+----------------------------  Form   -------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------*/
+
+form p {
+    font-size: 1.5vw;
+}
+
+label{
+    font-size: 1.2vw;
+}
+
+.input_group{
+    display: inline;                
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+.reset_form_button{
+    font-size: larger;
+    margin-right: 14vw;
+}
+
+.submit_form_button{
+    font-size: x-large;
+}
+
+label { 
+    display: flex; 
+    gap:20px;
+}
+
+label span {
+    width: 300px;
+}
+
+.checkout_form{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/*------------------------------------------------------------------------------------------------------------------
+--------------------------  Popup area  ----------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------*/
+
+.stopAreaTextArea{
+    width: 1100px;
+    margin-left: 15vw;
+    height: 750px;
+}
+
+.stopAreah2 {
+    padding-top: 10px;
+    margin-left: 50px;
+    font-size: 4rem;
+}
+
+.stopAreaP {
+    margin-left: 50px;
+    font-size: 2rem;
+}
+
+.stopAreaspan {
+    font-size: 2rem;
+}
+
+.stopAreaButton {
+    left:48vw;
+    width: 80px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+/*---------------------------------------------------------------------------------------------------
+-------------------------------- Footer----------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------*/
+
+footer {
+    font-size: 1.2rem;
+}

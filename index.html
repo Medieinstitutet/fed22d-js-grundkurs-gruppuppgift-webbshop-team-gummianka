@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gottfrids munkar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Webbshop where you can buy donuts from gottfrids munkar">
+    <meta name="robots" content="all">
+    <meta property="og:title" content="Gottfrids munkar">
+    <meta property="og:type" content="Webbshop">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="./images/aLotOfDounats.jpg">   
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/364f1f7cab.js" crossorigin="anonymous" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
+    <header>
+       <h1>Gottfrids<br>munkar</h1>
+   </header>
+    <nav>
+        <div class="navLinks">
+            <ul>
+                <li class="menuList"><a class="navLinks_a" href="#ourdonuts">Våra munkar</a></li>
+                <li class="menuList"><a class="navLinks_a" href="#info">Övrig info</a></li>
+                <li class="menuList"><a class="navLinks_a" href="#shopping-basket">Varukorg</a></li> 
+            </ul>
+            <a href="#shopping-basket" class="iconContainer" aria-label="Summery of totalprice and klick it to go to basket">
+                    <i class="fa fa-shopping-cart" id="shoppingCart"></i>
+            </a>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <div class="ourDonuts" id="ourdonuts">
+                    <h2>Våra munkar</h2>
+                </div>
+                 <div class="donutFlexWrap">
+                    <div class="ourDonutsDropdownContainer">
+                        <div class="ourDonutsDropdown">
+                            <div class="nameRatingShowalldiv">   
+                                <div class="nameRatingShowalldivs">    
+                                    <strong>Namn</strong>
+                                    <input type="radio" title="categoryFilter" id="name" name="sortDonuts" value="donutTitle">
+                                </div>
+                                <div class="nameRatingShowalldivs">
+                                    <strong>Rating</strong>
+                                    <input type="radio" title="categoryFilter" id="rating" name="sortDonuts" value="rating">
+                                </div>
+                                <div class="nameRatingShowalldivs">
+                                    <strong >Visa alla</strong>
+                                    <input type="radio" title="categoryFilter" id="all" name="sortDonuts" value="all" checked>
+                                </div>
+                            </div> 
+                            <div class="PriceCategoriDiv">
+                                <div>                                                                 
+                                   <p class="categoriGroupP"> <strong>Pris:</strong></p>                            
+                                        <div>
+                                            <span>Lägst till högst</span>  
+                                            <input type="radio" title="categoryFilter" id="lowPrice" name="sortDonuts" value="category">     
+                                        </div>
+                                        <div>
+                                            <span>Högst till lägst</span>  
+                                            <input type="radio" title="categoryFilter" id="highPrice" name="sortDonuts" value="category">     
+                                        </div>
+                                       <!-- <label class="flexOurDonutsDropdown"> -->
+                                </div> 
+                                <div>   
+                                    <p class="categoriGroupP"><strong>Kategori:</strong></p>                       
+                                        <div>
+                                            <span>Frukt</span>  
+                                        <input type="radio" title="categoryFilter" id="fruit" name="sortDonuts" value="category">  
+                                        </div>
+                                        <div>
+                                            <span>Godis</span> 
+                                            <input type="radio" title="categoryFilter" id="candy" name="sortDonuts" value="category">
+                                        </div>
+                                        <div>
+                                            <span>Bär</span> 
+                                            <input type="radio" title="categoryFilter" id="berrys" name="sortDonuts" value="category">
+                                        </div>
+                                    </div>  
+                                </div>          
+                    <div class="priceRange">
+                        <span>Prisklass&nbsp;&nbsp;</span>
+                        <span class="flex">
+                            <span>15 - 30 kr</span>
+                            <input type="range" min="15" max="30" value="30" id="priceRange" step="5">
+                            <br>
+                        </span> 
+                        <span id="currentRangeValue">30 kr</span>  
+                    </div> 
+                    </div>
+                </div>  
+            </div>  
+            <section class="donutCardWraper" id="donutCards"></section>
+        </section>
+        <section class="informationText">
+            <div class="informationTextHeaderContainer" id="info">
+                <h2 class="santah2">Övrig information</h2>
+            </div>
+            <div class="informationUlContainer">
+                <ul class="informationUlText">
+                    <li>10 % rabatt vid köp av 10 munkar av samma smak.</li>
+                    <li>25 kr rabatt tisdagar jämna veckor om ni köper för mer än 25 kr.</li>
+                    <li>Fri frakt vid fler än 15 munkar.</li>
+                    <li>Leveranstiden är 30 minuter från lagd beställning.</li>
+                    <li>Undantag för leveranstiden: <br><br>
+                        Helger: Leveranstid 1,5 h efter lagd beställning.<br><br> 
+                        Mellan kl 22.00-06.00: Leveranstid 45 minuter efter lagd beställning.<br><br> 
+                        Om beställningen sker på fredagar kl 11.00-13.00 levereras munkarna kl 15.00.<br></li> 
+                        <li>På luciadagen tillkommer en smarrig luciamunk till din beställning.</li>
+                </ul>
+            </div>
+        </section>    
+           <div class="middlepart_container">
+                <section class="section_basket" id="shopping-basket">
+                    <div class="basket">
+                        <div class="basketHeadeingContainer">
+                            <h2 class="middlepart_h2">Varukorg</h2>
+                        </div>
+                        <div class="main_heading_basket">    
+                            <h3 class="basket_heading">Valda munkar</h3>
+                        </div>
+                        <article id="basketDonuts"></article>
+                        <div class="emptyBasketContainer" id="emptyBasket">
+                            <p>Din varukorg är tom</p>
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <label for="discountCode">
+                            <span>Skriv in din rabattkod här:</span> 
+                            <input type="text" id="discountCode" placeholder="Rabattkod" value="">
+                        </label>
+                            <button class="discount_button" id="discountBtn">Använd rabattkod</button>                        
+                        <div class="basket_sum">
+                            <div>
+                                <p class="basket_heading">Totalsumma:</p>
+                                <p class="total_amount" ><span id="totalAmountBasket">0</span> SEK</p>
+                            </div>
+                            <div>
+                                <p class="shipping_heading">Frakt:</p>
+                                <p class="shipping_amount"><span id="shippingPrice">0</span> SEK</p>
+                            </div> 
+                            <p id="mondayDiscount"></p> 
+                            <div class="sumToPayContainer">
+                                <p class="summery">Summa att betala:</p>
+                                <p id="priceToPay" class="total_amount"></p> 
+                            </div>
+                        </div><br><br>
+                        <button id="emptyBasketBtn" class="emptyBasketBtn">Töm varukorgen</button>
+                    </div>
+                </section>
+                <section class="section-form">
+                    <div class="checkout_form">
+                        <h2 class="middlepart_h2">Kundformulär</h2>
+                        <form id="custumerForm" action="#">
+                            <br><div id="infoAboutTime"></div><br><br>
+                            <label for="firstname">
+                                <span>Förnamn</span>  
+                                <span class="errorMessage" id="errorMessageName" hidden></span>
+                                <input placeholder="tilltalsnamn" required class="input_group" type="text" id="firstname"> 
+                            </label>
+                            <br>
+                            <label for="lastname">
+                                <span>Efternamn</span>  
+                                <span class="errorMessage" id="errorMessageLastname" hidden></span>
+                                <input required class="input_group" type="text" id="lastname">
+                            </label>
+                            <br>
+                            <label for="adress"> 
+                                <span>Gatuadress</span> 
+                                <span class="errorMessage" id="errorMessageAdress" hidden></span>
+                                <input placeholder="gata och nummer" required class="input_group" type="text" id="adress">
+                            </label>
+                            <br>
+                            <label for="postnumber">
+                                    <span>Postnummer</span> 
+                                    <span class="errorMessage" id="errorMessagePostnumber" hidden></span>
+                                <input required class="input_group" type="text" id="postnumber">
+                            </label>
+                            <br>
+                            <label for="city">
+                                <span>Postort</span> 
+                                <span class="errorMessage" id="errorMessageCity" hidden></span>
+                                <input placeholder="stad" required class="input_group" type="text" id="city">
+                            </label>
+                            <br>
+                            <label for="doorCode">
+                                <span>Portkod</span> 
+                                <input class="input_group" type="number" id="doorCode">
+                            </label>
+                            <br>
+                            <label for="phonenumber">
+                                <span>Mobilnummer</span> 
+                                <span class="errorMessage" id="errorMessagePhoneNumber" hidden></span>
+                                <input required class="input_group" type="text" id="phonenumber">
+                            </label>
+                            <br>
+                            <label for="email">
+                                <span>E-post</span> 
+                                <span class="errorMessage" id="errorMassageeMail" hidden></span>
+                                <input required class="input_group" type="text" id="email">
+                            </label>
+                            <br>
+                            <p>Betalsätt</p>
+                            <label for="creditcard">
+                                Kort
+                                <input type="radio" id="creditcard" name="waysToPay" value="creditcard">
+                            </label>
+                            <label for="invoice" id="labelInvoice">
+                                Faktura
+                                <input type="radio" id="invoice" name="waysToPay" value="invoice"> 
+                                <br><span class="errorMessage" id="errorMessageInvoice" hidden></span>
+                            </label> <!--vid faktura fält med personnr, ska valideras-->
+                            <br>
+                            <div id="ssn" class="display-none">
+                                <label for="personNr">
+                                    <span>Personnummer</span> 
+                                    <span class="errorMessage" id="errorMessagePersonNR" hidden></span>
+                                    <input id="personNr" placeholder="YYMMDD0000" class="input_group" type="text" >
+                                </label>
+                            </div>
+                            <div id="cardpay" class="display-none">
+                                <label for="cardnr">
+                                    <span>Kortnummer</span> 
+                                    <span class="errorMessage" id="errorMessageCardNR" hidden></span>
+                                    <input placeholder="0000000000000000" class="input_group" type="number" id="cardnr">
+                                </label>
+                                <label for="dateyear">
+                                    <span>mån/år</span> 
+                                    <span class="errorMessage" id="errorMessageDateyear" hidden></span>
+                                    <input placeholder="MMYY" class="input_group" type="number" id="dateyear">
+                                </label>
+                                <label for="CVC">
+                                    <span>CVC</span> 
+                                    <span class="errorMessage" id="errorMessageCVC" hidden></span>
+                                    <input placeholder="000" class="input_group" type="number" id="CVC">
+                                </label>
+                            </div>
+                            <br>
+                            <label for="news">
+                                Prenumerera på vårt nyhetsbrev
+                                <input checked type="checkbox" name="news" id="news">
+                            </label><br><br>
+                            <label for="gdpr">
+                                Godkännande av behandling av personuppgifter
+                                <input required class="input_group" type="checkbox" name="gdpr" id="gdpr">
+                            </label>
+                            <br><br>
+                            <input class="reset_form_button" type="reset" value="Rensa formulär">
+                            <input class="submit_form_button" disabled type="submit" value="Beställ">
+                        </form>
+                    </div>
+                </section>
+            </div>    
+    </main>
+    <footer>
+        <address>
+            Adress: Måsvägen 4, Stockholm<br>
+            Telefon: 08-634 30 30<br>
+            E-post: <a href="#">gottfridsmunkar@gmail.com</a>
+        </address>
+    </footer>
+    <div class="stopArea" id="stopArea" hidden>
+        <div class="stopAreaTextArea">
+            <h2 class="stopAreah2">Tack för din beställning! </h2>
+            <p class="stopAreaP">Du har beställt <span class="stopAreaspan" id="summaryDonuts"></span> st munkar, för totalt <span class="stopAreaspan" id="summaryArea"></span> kr. </p>
+            <p class="stopAreaP">Beräknad leverans <span class="stopAreaspan" id="textAboutDeliveryTime"></span></p><br>
+            <p class="stopAreaP"> Hoppas det smakar och välkommen åter! <br><br><br>
+            Mvh Gottfrid med personal</p><br><br>
+        </div>
+        <button class="stopAreaButton" id="stopAreaButton">Stäng</button>
+        
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
